@@ -1,13 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+
 import reportWebVitals from './reportWebVitals';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import SignupPage from './routeComponents/SignupPageComponent/SignupPage';
+import SigninPage from './routeComponents/SigninPageComponent/SigninPage';
+import Navbar from './routeComponents/NavbarComponent/Navbar';
+import GlobalWrapper from './GlobalWrapper';
+import AddProductPage from './routeComponents/AddProductPageComponent/AddProductPage';
+import ProductPageComonent from './routeComponents/ProductPageComponent/ProductPageComponent';
+import CartPageComonent from './routeComponents/CartPageComponent/CartPage';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navbar />,
+    children: [
+      {
+        path: "/",
+        element: <SignupPage />
+      },
+      {
+        path: "/sign-in",
+        element: <SigninPage />
+      },{
+        
+          path: "/add-product",
+          element: <AddProductPage />
+        
+      },
+      {
+        path: '/products',
+        element: <ProductPageComonent />
+      },
+      {
+        path: '/cart',
+        element: <CartPageComonent />
+      }
+    ]
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <GlobalWrapper>
+
+      <RouterProvider router={router} />
+    </GlobalWrapper>
   </React.StrictMode>
 );
 

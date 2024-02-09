@@ -1,0 +1,28 @@
+.container {
+    background-color: rgb(126, 217, 87);
+    color: #221100;
+    margin-bottom: '15em';
+}
+
+.transparentBackground {
+   
+    backdrop-filter: blur(15px);
+    /* Blur the background for a frosted effect */
+    -webkit-backdrop-filter: blur(15px);
+    /* For Safari compatibility */
+    border-radius: 10px;
+    /* Soften the edges */
+
+}
+
+.shadowMobile {
+
+    box-shadow: 8px 17px 11px 0 rgba(0, 0, 0, 0.6);
+    
+    /* Add a subtle shadow */
+
+}
+
+.shadow {
+    box-shadow: 17px 31px 17px 0 rgba(0, 0, 0, 0.6);
+}
