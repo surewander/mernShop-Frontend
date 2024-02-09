@@ -38,7 +38,17 @@ const AddProduct = () => {
                 }
             })
         }
+        else if(isNaN(addProductData.price)){
+            globalDataDispatch({
+                type: 'createAlert',
+                value: {
+                    alertType: 'error',
+                    message: 'price should be a number'
+                }
+            })
+        }
         else{
+
 
             //....
             const formData = new FormData();
